@@ -1,0 +1,40 @@
+<ion-view view-title="Add Jobs">
+  <ion-content class="padding" scroll="false">
+    <div class="list list-inset">
+
+
+          <label class="item item-input">
+              <input type="text" placeholder="Job Title" ng-model="data.title">
+          </label>
+          <label class="item item-input">
+              <input type="number" placeholder="Pay Per Hour" ng-model="data.pay">
+          </label>
+          <label class="item item-input">
+          <div class="input-label">
+          Start Time
+          </div>
+              <input type="time" placeholder="Start Time" ng-model="data.starttime">
+          </label>
+          <label class="item item-input">
+          <div class="input-label">
+          End Time
+          </div>
+              <input type="time" placeholder="End Time" ng-model="data.endtime">
+          </label>
+          <label class="item item-input">
+              <input type="number" placeholder="Beacon Radius(in Miles)" ng-model="data.range">
+          </label>
+          <label class="item item-input">
+              <textarea rows="10" placeholder="Job Description" ng-model="data.desc">
+              </textarea>
+          </label>
+
+      </div>
+
+      <br>
+      <br>
+      <button class="button button-block button-calm" ng-click="addjob()">Post</button>
+
+
+  </ion-content>
+</ion-view>

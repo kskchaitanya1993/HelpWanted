@@ -1,0 +1,56 @@
+<ion-view view-title="Applied">
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <div class="list">
+      <div class="item item-divider">
+          Applied
+      </div>
+      <div class="item {{appliedtext()}}" style="align:center" >No one new applied</div>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="applied in applied" type="item-text-wrap" href="#/tab/chats/applied/{{applied.id}}">
+
+        <img ng-src="{{applied.image}}" class="{{manager()}}">
+        <h2 class="{{worker()}}">{{applied.title}}</h2>
+        <h2 class="{{manager()}}">{{applied.name}}</h2>
+        <p class="{{worker()}}">${{applied.pay}}</p>
+        <p class="{{manager()}}">{{applied.title}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      </ion-item>
+
+      <div class="item item-divider">
+          Accepted
+      </div>
+      <div class="item {{acceptedtext()}}" style="align:center" >No one new applied</div>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="accepted in accepted" type="item-text-wrap" href="#/tab/chats/accepted/{{accepted.id}}">
+
+        <img ng-src="{{accepted.image}}" class="{{manager()}}">
+        <h2 class="{{manager()}}">{{accepted.name}}</h2>
+        <p class="{{manager()}}">{{accepted.title}}</p>
+        <h2 class="{{worker()}}">{{accepted.title}}</h2>
+        <p class="{{worker()}}">${{accepted.pay}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      </ion-item>
+
+      <div class="item item-divider">
+          Rejected
+      </div>
+      <div class="item {{rejectedtext()}}" style="align:center" >No one new applied</div>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="rejected in rejected" type="item-text-wrap" href="#/tab/chats/rejected/{{rejected.id}}">
+
+        <img ng-src="{{rejected.image}}" class="{{manager()}}">
+        <h2 class="{{manager()}}">{{rejected.name}}</h2>
+        <p class="{{manager()}}">{{rejected.title}}</p>
+        <h2 class="{{worker()}}">{{rejected.title}}</h2>
+        <p class="{{worker()}}">${{rejected.pay}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      </ion-item>
+    </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,54 @@
+<ion-view view-title="Sign up" name="login-view">
+  <ion-content class="padding">
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Confirm Password" ng-model="data.confirmpassword">
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Full Name" ng-model="data.fullname">
+          </label>
+          <label class="item item-input">
+              <input type="email" placeholder="Email" ng-model="data.email">
+          </label>
+          <label class="item item-input">
+            <div class="input-label">
+          Date of Birth
+        </div>
+              <input type="date" ng-model="data.dob">
+          </label>
+          <label class="item item-input item-select">
+		    <div class="input-label">
+		      Gender
+		    </div>
+		    <select ng-model="data.gender">
+		      <option selected>Male</option>
+		      <option>Female</option>
+		      <option>Other</option>
+		    </select>
+		  </label>
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		      Role
+		    </div>
+		    <select ng-model="data.role">
+		      <option selected>Manager</option>
+		      <option>Worker</option>
+		    </select>
+
+		  </label>
+      <label class="item item-input {{checkrole()}}" >
+          <input type="text" placeholder="Name of your business" ng-model="data.bus">
+      </label>
+      </div>
+
+      <br>
+      <br>
+      <button class="button button-block button-calm" ng-click="signup()">Next</button>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,18 @@
+<ion-view view-title="Login" name="login-view">
+  <ion-content class="padding" ng-controller="MyCtrl">
+  
+<button class = "button" ng-click = "getPicture()">Open Gallery</button>
+
+<div class="ion-profile-picture no-picture" ng-click ="takePicture()" style="background-image: url('{{user.picture}}');"> </div>
+
+  
+      <!--ion-profile-picture ng-model="data.myPicture"></ion-profile-picture-->
+   <br>
+   
+  <br>
+  <br>
+      
+      <button class="button button-block button-calm" ng-click="addpic()">Signup</button>
+      
+  </ion-content>
+</ion-view>

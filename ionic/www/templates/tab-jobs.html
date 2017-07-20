@@ -1,0 +1,42 @@
+<ion-view view-title="Jobs">
+  <ion-content class="padding">
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+  <button id="addjobbutton" class="button button-block button-calm {{addjobbutton()}}"  ng-click="addjob()">Add Job</button>
+  <div class="item-input-inset {{findjobbutton()}}">
+      <label class="item-input-wrapper">
+          <input type="number" placeholder="Distance(in Miles)" ng-model="data.distance">
+          miles
+      </label>
+      <button id="addjobbutton" class="button button-calm"  ng-click="findjob()">Search</button>
+
+    </div>
+    <!--ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="job in jobs" type="item-text-wrap" href="#/tab/jobs/{{job.id}}">
+        <h2>{{job.title}}</h2>
+        <p>Pay: {{job.pay}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list-->
+
+    <div class="card" ng-repeat="job in jobs">
+      <div class="list" ng-init = "job.jobId = $index" >
+        <a class="item" href="#/tab/jobs/{{job.jobId}}">{{job.jobId +1}}. {{job.title}}</a>
+      </div>
+      <div class="item item-divider">
+        <p>Pay: ${{job.pay}}</p>
+        <p>Start Time: <span ng-bind="job.starttime | date:' h:mm a'"></span></p>
+        <p>End Time: <span ng-bind="job.endtime | date:' h:mm a'"></span></p>
+        <pre>Description: {{job.desc}}</pre>
+
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
